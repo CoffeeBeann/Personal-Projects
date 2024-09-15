@@ -1,0 +1,334 @@
+:Basic Python Commands
+
+- Pass = To Pass lines of code( very usefull in complex code.)
+- Break = To Break a loop when an statment becomes true
+- Dictionary = To create an array of values that can be called upon in later code, must have values contained in {}
+- Arrays = An Array is a collection of written values that are stored in a joint variable.(Very usefull when creating list in python)
+- del = deletes requested code areas
+- append = to add to an array ex) array1.append["bob":13]
+- Continue = to bypass code undernesth it if a statemt above it reagrding the code is prooven true.
+- try = a command that if a statment fails the command line will go to an execpt line
+- max/min = this command picks out the highest value in a list and dsiplays it. we can use this with intergers and even strings
+ex) try: 
+         if name > 3:
+              print(hi)
+
+except:
+        print(Error)
+- # = anything typed next to this command will be left as a remark and will not interupt any code in the script.
+
+-""" = this will create a remark that can span past its line untill the command is terminated with another """.
+
+- \ = this syntax command can be used to have single apostrophes inside a statment ex) print("It\'s a nice day")
+
+- var1\
+==\
+var2:
+       = this command is another way to set statments in a script
+
+- def = defines a function
+- return = returns a statment to a console.
+- Local Var = alocal variable is a varibale that exist inside a funtion and will not chage valuesif variable is set to a new number insode the function
+- global variable = this varible is a varibale that cannot have its value changed in a finction unless it is directed to. ex) var1 = 2
+- abs = returns the absloute value of a number. ex) abs(-65) = 65
+- bool = the bool funtion takes in a single parameter and either returns a true or false statments based on its value. ex) bool(9) = true
+the bool funstion will only return a false statment if the value given is "0" or "None".
+
+- dir = it returns information about the value and what function you can use with it ex) var1 = 1 ; dir(var1)
+
+- help = this command aids in giving infomation about the directoies given on an value ex) var1 = 1 ; dir(var1) : help(var1.upper)
+
+- eval = evaluates simple python expressions ex) eval("print("hello")") = hello
+
+- exec = executes a writin program within a script. very usfull with functions EX) program = '''print("hello") print("my name is bob")''' : exec(program)
+
+- ''' = this tells python that this line of code will span multiple lines across the console. EX) '''print ("hi")
+                                                                                                  print("my name is ian")'''
+
+- input = this request that the users input be typed into the console. EX) age = '''input("Enter Your Age.")'''
+                                                                                 age
+- Int = this function truns a string with an interger value to that interger value. EX) var1 = int("26") = 26
+
+- float =  this function is the same as "int" but it takes into account decimal places. EX) var1 = float("3.14") = 3.14
+
+- string = converts an interger to string form. EX) var1=1 str(var1) = "1" to restrict how many characters are printed we use.
+
+string = "word"
+print(string[0:3])
+
+- searching = tp search for a certain phrase in a string. EX) string1  = "This is a string."
+                                                                         m = re.search("This",string1)
+                                                                         print(m)
+
+
+- string array = so create a list (array1 = ['a','b','c']): if we put a max symbol infront of it we should get a error, but we dont. python assignes a value to letters. lowercase "z" is the highest value, and so capitol a is the lowest value. using this python can pick out the max value and min value. using array1 and the max command we sould have gotten 'c'.
+
+- len = this command is used in front of a list and is often used to determine how many values there are in a list. EX) array1 = [23,54,67] ; len(array1) = 3
+
+- sum = this function is used in a list scenario to determine the sum of values in s list. EX)list1 = [1,2,3,4,5] ; sum(list1) = 15
+
+=======================================================================================================================================================================
+
+:Classes
+
+-class = a class is a type of dictionary that can be deifined outide of its function and it must consist of this syntax: class var1() ;
+ def __init__(self,("up to user"))
+
+the __init__ command basically says to python "what manditory parameters do you want in your class?" this is why we can create (self,age,name,grade)
+ps the self thing is not a parameter that we added, but itis there to call itself when we use it. EX) we can then call student.name,student.age,student.grade.
+
+creating class variables = to add a value to the class you must have the required parameters. EX) student2 = Students("Ian",13,8th): this fits the parameter of
+self.name,self.age,self.grade. if parameters are not met there will be an error.
+ 
+how to display attributes = to display attributes we must create a display func. 
+
+:
+class Students:
+    def __init__(self,name)
+    self.name = name
+student1 = Students("Ian")
+def Display(self):
+    return(self.name)
+
+student1.name  = ian
+
+- hasattr = this command is used to tell if a class object has certain variables. EX) hasattr(student1,"Age"): This is asking if student1 has the attribute of age.
+this command will give us a true or false statment. howeveryou can set certain objects to have certain attributes
+
+-setattr = this command sets attribute to certin objects in our class EX) setattr(Student1,"grade","8th") this creates another attribute only for student1.
+
+- getattr = this command dsiplays attributes of objects witin a class. EX) getattr(Student1,"Grade") = Displays Grade.
+
+- delattr = this commands deletes attributes of objects in our class. EX) del(Student1,"Grade") = *Deletes Grade*
+
+:CHILD CLASS EXAMPLE
+>>> class Parent:
+	counter = 10
+	def __init__(self):
+		print("Parent Funtion Being Initialized.")
+	def SetCounter(self,num):
+		Parent.counter = num
+	def ShowCounter(Self):
+		print (str(Parent.counter))
+	def ParentFunction(self):
+		print("Parent Function Is Being Called.")
+
+		
+>>> class Child(Parent):
+	def __init__(self):
+		print("Child Class Being Initialized.")
+	def ChildFunction(self):
+		print("Child Function Is Being Called.")
+
+		
+>>> c = Child()
+Child Class Being Initialized.
+>>> # What I Just Did Was I Set The Child Class Representation to "c", so i don't have to type Child.ParentFunction() over and over again. :)
+>>> 
+>>> c.counter
+10
+>>> c.SetCounter(20)
+>>> c.ShowCounter()
+20
+>>> # This Child Class Allows me To Have A Class Tied To Another So I Can Swap Attributes Between Them.
+>>> 
+
+=======================================================================================================================================================================
+
+:Files
+
+- Open = this command is used to open files and programs from a python shell. EX) file1 = open("Test.txt","r") (the "r" is telling python we just want to read this document)
+
+- Read = to read a file the command must contain EX) file1.read().however to read it again you cannot just do file1.read() or you will get just ",
+to combat this you must type file1.tell(). this ask python where my courser is when reading a file.
+you must write this code.
+
+file1.seek(0,0)
+file1.read()
+
+this command sets the couser to the begining of the text so it is readable.
+
+you can even set the courser to only read certian parts of a txt file. EX) file1.read(21): this puts the courser to the 21 charater.
+
+- file1.tell() = this command tells whichpostion your courser is in when a file is open. EX) file1.tell() = 84
+- Writing to files = this command gives us the ability to write into files. EX) file1=open("trxt.txt","w"); file1.write("Enter Text"). when you hit enter the shell will spit out a number and that number is how many characters you added into the file. EX) "65" WARNING. WHEN YOU WRITE INTO A FILE THE FILE WILL BE RE-WRITEN TO PRINT ONLY WHAT YOU TYPED!
+- \n = when we are writing text in a file we want to use mutiple lines in certain situations. to do this is to add "\n".
+EX) file1.write("Hello \n world."). however this will show as one line in the shell and only gets into place when run on a python application.
+
+-close a file = to close a file we use the command ".close()". EX) file1.close(). we can use this to opne the file as with a different attriubute such as write instead of read.
+
+- appending to a file = this command will allows us to add to a file without deleting the contents witin. EX) file1 = open("TestFile.txt","a")
+                                                                                                                      file1.write("\n anything writen in here will be transfered into new or existing file(s) "). this will also give out a number that will represent how many characters you added into the file.
+
+- a+ = what this command does is that it allows us to append or read a file simotanioulsy. EX) f = open("testfile.txt","a+")
+                                                                                               f.write() or f.read():
+
+- Copying = to copy values into a file you must use the following code in the right syntax.
+
+File1 = input("Enter FileName: ")
+(Enter file name)
+File1 = File1 + ".txt"
+file1 = open("File1.txt","r")
+file2 = open("copiedFile.txt","r")
+file2.write(file1.read())
+
+file1.close()
+file2.close()
+file2 = open("copiedFile.txt","r")
+
+this code then copies all the contents from file2 to file2
+
+=======================================================================================================================================================================
+
+:Modules
+
+- Modules = Modules are libraries that carry functions.
+
+- Randint = this module creates a random interger when used. EX) import random : print(random.randint(0,100)) (the import commnad is necessary)
+
+- choice = this command allows us to pick a random choice from a list such as a shopping list. EX) food = ['milk','bread','eggs']
+                                                                                                   print(random.choice(food))
+
+-shuffle = this command allows us to shuffle a list in an array. EX) food = ["milk","bread","eggs"]
+                                                                     print(random.shuffle(food))= none
+                                                                     food
+
+- Sys Module = this system module allows us to use functions from the system itself.
+
+- sys.stdin.readline() = this command basically tells python that we are going to set a variable to our input
+
+input1 = sys.stdin.readline()
+"This text will become the value of input1. if you print input1 this will come out."
+
+- restricting input = lets say i only wnat the first 10 letters of a sentence. i can do this with
+
+import sys
+User = sys.stdin.readline(10)
+This Is A Password.
+User = "this is a"
+
+- sys = anotherthing about the sys module is that you can determine the output of a value. EX)
+
+import sys
+sys.stdout.write("This is an example") = this would then output your sentence with how many characters it has. it is not very usefull and there is a good chance you will not have to use it in your code.
+
+-sys.version = this command gives you the version of your shell and the date.
+
+- time module = this module allows us toget the time. however if you type in time.time() = you will get a very big number and that number is how many seconds have past since january 1 1970 at 12:00am. it is not that usefull adn you will probably never have to use it.
+
+- how to time a program= we will actaully need the time.time() command and the code goes something like this.
+
+import time
+def Numbers(max):
+    time1 = time.time()
+    for i in range(0,max):
+    print(i)
+time2 = time.time()
+
+this set of commands will have the function of numbers have the attribute of max. and we also see that the for loop that we createdhas the attribute max in it.
+this meanstha if we want this program to work we must call the funtion and assigned max a value.
+
+Numbers(100) 
+
+time.asctime() = this command shows us a more readable time that it is. it wil show the day, month, Monday, time, year
+
+- time add - this lets us create a new time, we first must create a tupple with 9 arguemnts. EX) time.asc(year,month,day,hours,minutes,seconds,day of the week,day of the year, daylights savings time) 1 if it is 0 if its not.
+
+monday =1 tuesday = 2 and so on
+
+
+- localtime = (time.localtime) this creates a more precise time that it is. we can take hold of this by creating a new variable
+
+EX)
+import time
+t = time.localtime()
+year = t[0]
+day = t[2]
+month = t[3]
+print(month + "," + day + "," + year)
+
+- time.sleep = this command is used to slow down a process so it can be readable EX) for i in range(0,5)
+                                                                                     time.sleep(1)
+                                                                                     print(i)
+=======================================================================================================================================================================
+
+:GUI
+
+- Turtle Module = this module allows us to tinker with a user interface to create actual programs that run on a screen. if we want to draw something we must initialize a pen. we do this as so. note that the"P" in Pen is capitalized.
+
+'''
+import Turltle
+X = turtle.Pen()
+'''
+
+- reset = to reset the module we must type "What You Did".turtle(reset)
+
+- to make the pen go fowardwe need to have our values in degrees. EX) t.forward(100) = this just means move forward 100 pixels
+
+to chage directions you use the direction left and right. EX) t.left(95) = this moes the mouse 95 degrees to the left
+
+if we want the pen to stop tracing a line behind it we just use the command "t.up()"
+
+if we want it to start to leave a trail again we just use the command "t.down()"
+ 
+to add color to an object we use the command t.color(0,0,0) these numbers are based off of red,green, and blue. so how much blue, green, or red
+this creates a colored line.
+
+to fill in an object with color we use the command t.begin_fill()
+this tells python that any shape we create it must color in. we then add in our coordinates and then tell python "t.end_fill()"
+
+- circle= to create a circle you must do this t.circle(*radiusValue*)
+
+=======================================================================================================================================================================
+
+:Data
+
+- Seacrhing the internet for data: to begin to search the internet for data you will need two modules(re, urllib) the urllib stands for "url library"
+to put in the second module you must use the following syntax: import urllib.request
+
+- a simple stock finding program will look something like this(note that the url goes up to the "?q=")
+
+import re
+import urllib.request
+
+=======================================================================================================================================================================
+
+:Buttons
+
+<Button-1> - Left Click
+<Button-2> - Scroll
+<Button-3> - Right Click
+<Right> - Right Arrow Key
+<Left> - Left Arrow Key
+<Return> - Enter
+
+============================================================================================================================================================
+
+tkinter
+
+to start the tkinter module you must 
+
+from tkinter import * which says fomr tkinter import everything
+
+to initiazlie the canvas we do
+
+root = Tk() (pay attention to capitalization)
+
+another little function we can use is root.mainloop() which says dont exit untill the user exits
+
+:label
+
+to create a label we basically initialize it firstEX)
+
+L1 = Label(root, text = "This is our label")
+
+and to add it to the module we use
+
+L1.pack()
+
+to add a 
+
+
+
+
+
